@@ -1,5 +1,7 @@
 # Sigilo 🤫
 
+[![Documentation](https://readthedocs.org/projects/sigilo/badge/)](https://sigilo.readthedocs.io/en/latest/)
+
 Sigilo provides a secure way to store and retrieve sensitive information like
 passwords, OAuth access tokens, credit card numbers, etc.
 
