@@ -26,6 +26,10 @@ Stores
 
 .. autoclass:: RedisStore
 
+.. module:: sigilo.stores.memcache
+
+.. autoclass:: MemcacheStore
+
 Ciphers
 ------
 
