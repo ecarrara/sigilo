@@ -1,0 +1,85 @@
+[project]
+name = "sigilo"
+dynamic = ["version"]
+authors = [
+  { name="Erle Carrara", email="carrara.erle@gmail.com" },
+]
+description = ""
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = []
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Source = "https://github.com/ecarrara/sigilo"
+Issues = "https://github.com/ecarrara/sigilo/issues"
+
+[project.optional-dependencies]
+redis = [
+  "redis"
+]
+cryptography = [
+  "cryptography"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "sigilo/__init__.py"
+
+[tool.hatch.envs.test]
+dependencies = [
+  "pytest",
+  "pytest-cov",
+  "redis",
+  "cryptography"
+]
+
+[[tool.hatch.envs.test.matrix]]
+python = ["3.11", "3.10", "3.9", "3.8"]
+
+[tool.hatch.envs.test.scripts]
+cov = "pytest --cov=sigilo {args:tests}"
+
+[tool.hatch.envs.default]
+dependencies = [
+  "black>=23.3",
+  "pyright>=1.1",
+  "ruff>=0.0.274",
+  "redis",
+  "cryptography",
+  "pytest",
+  "sphinx"
+]
+
+[tool.hatch.envs.default.scripts]
+typing = "pyright {args:sigilo tests}"
+style = [
+  "ruff {args:.}",
+  "black --check --diff {args:.}"
+]
+fmt = [
+  "black {args:.}",
+  "ruff --fix {args:.}",
+  "style"
+]
+doc = [
+  "sphinx-build -b html docs _build/html"
+]
+
+[tool.black]
+target-version = ["py38"]
+line-length = 120
+
+[tool.ruff]
+target-version = "py38"
+line-length = 120
+
+[tool.ruff.isort]
+known-first-party = ["sigilo"]

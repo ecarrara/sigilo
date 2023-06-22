@@ -1,0 +1,6 @@
+class Store:
+    def get(self, key: str) -> bytes:
+        ...
+
+    def set(self, key: str, value: bytes):
+        ...
