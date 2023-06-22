@@ -1,6 +1,7 @@
 # Sigilo 🤫
 
 [![Documentation](https://readthedocs.org/projects/sigilo/badge/)](https://sigilo.readthedocs.io/en/latest/)
+[![PyPI](https://img.shields.io/pypi/v/sigilo)](https://pypi.org/project/sigilo/)
 ![GitHub](https://img.shields.io/github/license/ecarrara/sigilo)
 
 Sigilo provides a secure way to store and retrieve sensitive information like
