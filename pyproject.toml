@@ -25,6 +25,9 @@ redis = [
 cryptography = [
   "cryptography"
 ]
+pymemcache = [
+  "pymemcache"
+]
 
 [build-system]
 requires = ["hatchling"]
@@ -38,7 +41,8 @@ dependencies = [
   "pytest",
   "pytest-cov",
   "redis",
-  "cryptography"
+  "cryptography",
+  "pymemcache"
 ]
 
 [[tool.hatch.envs.test.matrix]]
@@ -53,6 +57,7 @@ dependencies = [
   "pyright>=1.1",
   "ruff>=0.0.274",
   "redis",
+  "pymemcache",
   "cryptography",
   "pytest",
   "sphinx"
